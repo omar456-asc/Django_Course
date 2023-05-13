@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="mb-4">{{ book.title }}</h1>
+    <dl class="row">
+      <dt class="col-sm-3">Author</dt>
+      <dd class="col-sm-9">{{ book.author }}</dd>
+
+      <dt class="col-sm-3">Published Year</dt>
+      <dd class="col-sm-9">{{ book.published_year }}</dd>
+    </dl>
+    <a class="btn btn-primary" href="{% url 'book_edit' book.pk %}">Edit</a>
+    <a class="btn btn-secondary" href="{% url 'book_list' %}">Back to list</a>
+  </div>
+{% endblock %}

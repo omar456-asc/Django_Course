@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="jumbotron">
+    <h1 class="display-4">Welcome to my Bookstore</h1>
+    <p class="lead">Here you can create, edit, and delete books.</p>
+    <hr class="my-4">
+    <p>Get started by clicking the button below.</p>
+    <a class="btn btn-primary btn-lg" href="{% url 'list_books' %}" role="button">View Books</a>
+  </div>
+{% endblock %}

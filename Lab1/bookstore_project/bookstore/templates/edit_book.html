@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Edit Book</h1>
+  <form method="POST" class="needs-validation" novalidate>
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" class="form-control" id="title" name="title" value="{{ book.title }}" required>
+      <div class="invalid-feedback">
+        Please provide a valid title.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="author" class="form-label">Author</label>
+      <input type="text" class="form-control" id="author" name="author" value="{{ book.author }}" required>
+      <div class="invalid-feedback">
+        Please provide a valid author name.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="published_year" class="form-label">Published Year</label>
+      <input type="number" class="form-control" id="published_year" name="published_year" value="{{ book.published_year }}" required>
+      <div class="invalid-feedback">
+        Please provide a valid published year.
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a href="{% url 'book_list' %}" class="btn btn-secondary">Cancel</a>
+  </form>
+{% endblock %}
