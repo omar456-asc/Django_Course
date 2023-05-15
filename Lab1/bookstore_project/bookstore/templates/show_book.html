@@ -10,7 +10,7 @@
       <dt class="col-sm-3">Published Year</dt>
       <dd class="col-sm-9">{{ book.published_year }}</dd>
     </dl>
-    <a class="btn btn-primary" href="{% url 'book_edit' book.pk %}">Edit</a>
-    <a class="btn btn-secondary" href="{% url 'book_list' %}">Back to list</a>
+    <a class="btn btn-primary" href="{% url 'book_edit' book.id %}">Edit</a>
+    <a class="btn btn-secondary" href="{% url 'list_books' %}">Back to list</a>
   </div>
 {% endblock %}
